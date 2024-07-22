@@ -1,0 +1,21 @@
+1.Activities and Progress:
+  - Reviwed papers on the Noise Injection training
+    a. https://www.nature.com/articles/s41467-020-16108-9
+    b. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9472868
+    c. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8715178
+  - Noise tolerance observations for the different Quantized weight sets
+  - Implemented Additive noise injection training on 1- bit adder
+
+2.Implemented Technique:
+  - Calculate the standard devation of the noise to be added to the each layer using the equation S.D= W(max in the layer) * Noise factor.
+  - Add the noise in the STE only in the forward pass. And saved the actual weights to do the weight updation in the backward pass.
+  - Used the quantised weights from the previous code as base weights.
+  - In backward pass the weight updation is done to the non noisy weights.
+
+3. Key findings and Results:
+  - Improved the noise tolerance upto 20% for some weight sets.
+  - Difficulties found in training some weight sets Not able to converge.
+
+4. Next steps:
+  - Finding the non quantised weight range for the flat loss region
+  - Introducing temporal conductance drift .
